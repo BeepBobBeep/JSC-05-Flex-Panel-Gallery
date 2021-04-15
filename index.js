@@ -22,18 +22,18 @@ panels.forEach(panel => {
 
         // Applying open and open-active to current panel
         this.classList.toggle("open");
-        // Instead of adding another eventlistener as in next statement we can use this 
-        // which adds the open-active statement 0.7s after the previous statement
-        // setTimeout( () => {this.classList.toggle("open-active");} , 700);
+        // Instead of adding another eventlistener as in next statement we will use this 
+        // method which adds the open-active statement 0.7s after the previous statement
+        // as it is difficult to find out after which transition end we have to switch class
+        // Using the other method will show bugs when clicking multiple panels
+        setTimeout( () => {this.classList.toggle("open-active");} , 700);
     });
 });
 
-    
-
-panels.forEach(panel => {
-    panel.addEventListener('transitionend', function (event) { 
-        if(event.propertyName == 'flex-grow')
-            this.classList.toggle("open-active");
-    });
-});
+// panels.forEach(panel => {
+//     panel.addEventListener('transitionend', function (event) { 
+//         if(event.propertyName == 'flex-grow')
+//             this.classList.toggle("open-active");
+//     });
+// });
         
