@@ -4,13 +4,31 @@
 panels = document.querySelectorAll(".panel");
 
 panels.forEach(panel => {
-    panel.addEventListener('click', function () { 
+    panel.addEventListener('click', function () {
+        
+        // If we click the same panel again then close it - so removing the open and open-active classes and return to normal
+        if( Array.from(panel.classList).includes("open")){
+            panel.classList.remove("open");
+            panel.classList.remove("open-active");
+            return;
+        }
+        
+        // Now if code is executed till here means we have clicked on another panel So
+        // Removing open and open-active classes from all other panels
+        panels.forEach( panel => {
+            panel.classList.remove("open");
+            panel.classList.remove("open-active");
+        } );
+
+        // Applying open and open-active to current panel
         this.classList.toggle("open");
         // Instead of adding another eventlistener as in next statement we can use this 
         // which adds the open-active statement 0.7s after the previous statement
         // setTimeout( () => {this.classList.toggle("open-active");} , 700);
     });
 });
+
+    
 
 panels.forEach(panel => {
     panel.addEventListener('transitionend', function (event) { 
