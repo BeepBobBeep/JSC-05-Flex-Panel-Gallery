@@ -1,3 +1,6 @@
+// Currently When all the panels open and remain opens when we click on them ,
+// To make the funcionality of closing all other panel i.e. maximum 1 panel open at a time 
+// Change branch to only_one_open with command : git checkout only_one_open
 panels = document.querySelectorAll(".panel");
 
 panels.forEach(panel => {
