@@ -109,7 +109,7 @@ body {
     font-family: 'Amatic SC', cursive;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
     /* Initial Font size of p text */
-    font-size: 2rem;
+    font-size: 3rem;
     
 }
 
@@ -122,6 +122,6 @@ body {
 .panel.open{
     flex: 5;
 }
-.panel.open p{
+.panel.open p:nth-child(2){
     font-size: 6rem;
 }
